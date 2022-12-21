@@ -1,22 +1,21 @@
-[
+const products = [
         {
         id : 0,
-        title : "White and Black",
-        content : "Born in France",
-        price : 120000
+        name : "chicken breast",
+        info : "Born in France",
+        price : 12000
         },
-    
         {
         id : 1,
-        title : "Red Knit",
-        content : "Born in Seoul",
-        price : 110000
+        name : "vegan bread",
+        info : "Born in Seoul",
+        price : 11000
         },
-    
         {
         id : 2,
-        title : "Grey Yordan",
-        content : "Born in the States",
-        price : 130000
+        name : "green salad",
+        info : "Born in the States",
+        price : 13000
         }
 ] 
+export default products;

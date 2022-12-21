@@ -16,3 +16,14 @@
   background-size: cover;
   background-position: center;
 }
+
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.nav-span {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

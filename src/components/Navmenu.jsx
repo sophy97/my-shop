@@ -1,27 +1,33 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 // bootstarp - nav
 import { useNavigate } from 'react-router-dom';
-import { Nav, Navbar, NavLink } from 'react-bootstrap';
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faLemon } from "@fortawesome/free-regular-svg-icons";
+import { faCartFlatbed, faHouse } from "@fortawesome/free-solid-svg-icons";
+// css연결
+import "../App.css";
 
 const Navmenu = () => {
 
     const navigate = useNavigate();
 
     return (  
-        <Navbar fixed="top">
-            <NavLink to="/">로고이미지</NavLink>
-            <Nav className="me-auto">
-                <Nav.Link href="#home">LighterLife</Nav.Link>
-                <Nav.Link href="#products">Products</Nav.Link>
-                <Nav.Link href="#mypage">Mypage</Nav.Link>
-            </Nav>
-            {/* <span onClick={()=>{navigate('/')}}>LighterLife</span>
-            <span onClick={()=>{navigate('/')}}>Home</span>
-            <span onClick={()=>{navigate('/info')}}>Info</span>
-            <span onClick={()=>{navigate('/products')}}>Shop</span> */}
-        </Navbar>
+        <div>
+            <div className='navbar'>
+                <span className='nav-span' onClick={()=>{navigate('/')}}>
+                    <FontAwesomeIcon icon={faHouse} size="2x" />　Home
+                </span>
+                <span className='nav-span' onClick={()=>{navigate('/about')}}>
+                    <FontAwesomeIcon icon={faLemon} size="2x" />　about
+                </span>
+                <span className='nav-span' onClick={()=>{navigate('/products')}}>
+                    <FontAwesomeIcon icon={faCartFlatbed} size="2x" />　products
+                </span>
+                <span className='nav-span' onClick={()=>{navigate('/mypage')}}>
+                    <FontAwesomeIcon icon={faUser} size="2x" />　mypage
+                </span>
+            </div>
+            
+        </div>
     );
 }
 
