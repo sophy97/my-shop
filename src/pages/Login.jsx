@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
-const Signin = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -14,7 +14,7 @@ const Signin = () => {
     setError('')
     try {
       await signIn(email, password);
-      alert("login")
+      alert("로그인 완료");
       navigate('/account');
     } catch (e) {
       setError(e.message);
@@ -34,20 +34,18 @@ const Signin = () => {
         </p>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium'>Email Address</label>
-          <input onChange={(e) => setEmail(e.target.value)} className='border p-3' type='email' />
+        <div>
+          <label>Email Address</label>
+          <input onChange={(e) => setEmail(e.target.value)} type='email' />
         </div>
-        <div className='flex flex-col py-2'>
-          <label className='py-2 font-medium'>Password</label>
-          <input onChange={(e) => setPassword(e.target.value)} className='border p-3' type='password' />
+        <div>
+          <label>Password</label>
+          <input onChange={(e) => setPassword(e.target.value)} type='password' />
         </div>
-        <button className='border border-blue-500 bg-blue-600 hover:bg-blue-500 w-full p-4 my-2 text-white'>
-          Sign In
-        </button>
+        <button>Sign In</button>
       </form>
     </div>
   );
 };
 
-export default Signin;
+export default Login;
